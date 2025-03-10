@@ -1,15 +1,27 @@
-function studentGradeGenerator(){   
-    const marks=parseFloat(prompt("Enter the student marks"))
-    if (marks>79){
-        console.log("Grade: A")
-    }else if(marks>=60 && marks<=79){
-        console.log("Grade: B")
-    }else if(marks>=59 && marks <=49){
-        console.log("Grade: C")
-    }else if (marks>=40 && marks<=49){
-        console.log("Grade D")
-    }else {
-        console.log("Grade: E")
-     }
-        
+function calculateGrade(mark) {
+    if (mark > 79) {
+      return 'A';
+    } else if (mark >= 60) {
+      return 'B';
+    } else if (mark >= 50) {
+      return 'C';
+    } else if (mark >=40) {
+      return 'D';
+    } else {
+      return 'E';
     }
+  }
+  
+  function studentGradeGenerator() {
+    const mark = parseFloat(('Enter the student mark (0-100):'));
+  
+    if (isNaN(mark) || mark < 0 || mark > 100) {
+      return 'Invalid input. Please enter a valid mark between 0 and 100.';
+    }
+  
+    const grade = calculateGrade(mark);
+
+  }
+  console.log(calculateGrade(54))
+  
+  
